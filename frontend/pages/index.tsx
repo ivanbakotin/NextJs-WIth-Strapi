@@ -15,6 +15,7 @@ const Home: NextPage = ({ articles, categories, homepage }:any) => {
           <Articles articles={articles} />
         </div>
       </div>
+      <div></div>
     </Layout>
   );
 };
