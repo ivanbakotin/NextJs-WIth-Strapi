@@ -15,9 +15,9 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   };
 
   const queryString = qs.stringify(urlParamsObject);
-  
+
   const requestUrl = `${getStrapiURL(
-    `/api${path}${queryString ? `?${queryString}` : ""}`
+    `/api${path}${queryString ? `?${queryString}` : ""}`,
   )}`;
 
   const response = await fetch(requestUrl, mergedOptions);
@@ -26,6 +26,6 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
     console.error(response.statusText);
     throw new Error(`An error occured please try again`);
   }
-  const data = await response.json();
-  return data;
+
+  return await response.json();
 }

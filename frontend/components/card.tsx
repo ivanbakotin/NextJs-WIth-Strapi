@@ -5,18 +5,14 @@ import NextImage from "./image";
 const Card = ({ article }: any) => {
   return (
     <Link href={`/article/${article.attributes.slug}`}>
-      <a className="uk-link-reset">
-        <div className="uk-card uk-card-muted">
-          <div className="uk-card-media-top">
+      <a>
+        <div>
+          <div>
             <NextImage image={article.attributes.image} />
           </div>
-          <div className="uk-card-body">
-            <p id="category" className="uk-text-uppercase">
-              {article.attributes.category.data.attributes.name}
-            </p>
-            <p id="title" className="uk-text-large">
-              {article.attributes.title}
-            </p>
+          <div>
+            <p>{article.attributes.category.data.attributes.name}</p>
+            <p>{article.attributes.title}</p>
           </div>
         </div>
       </a>
