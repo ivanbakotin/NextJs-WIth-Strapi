@@ -14,7 +14,7 @@ const Nav = ({ categories }: any) => {
       <List>
         <ListItem p={5}>
           <Link href="/">
-            <Text fontSize={"clamp(0.8rem, 1vw, 3rem)"}>Strapi Blog</Text>
+            <Text fontSize="100">Strapi Blog</Text>
           </Link>
         </ListItem>
       </List>
@@ -24,9 +24,7 @@ const Nav = ({ categories }: any) => {
             return (
               <ListItem p={5} key={category.id}>
                 <Link href={`/category/${category.attributes.slug}`}>
-                  <Text fontSize={"clamp(0.8rem, 1vw, 3rem)"}>
-                    {category.attributes.name}
-                  </Text>
+                  <Text fontSize="100">{category.attributes.name}</Text>
                 </Link>
               </ListItem>
             );

@@ -1,17 +1,15 @@
 import App, { AppProps } from "next/app";
 import Head from "next/head";
-import "../assets/css/style.css";
 import { createContext } from "react";
 import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import { ChakraProvider } from "@chakra-ui/react";
+import theme from "../theme/index";
 
-// Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { global } = pageProps;
-
   return (
     <>
       <Head>
@@ -20,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           href={getStrapiMedia(global.attributes.favicon)}
         />
       </Head>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <GlobalContext.Provider value={global.attributes}>
           <Component {...pageProps} />
         </GlobalContext.Provider>
