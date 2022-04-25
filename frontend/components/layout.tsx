@@ -1,9 +1,11 @@
 import Nav from "./nav";
+import Footer from "./footer";
 
-const Layout = ({ children, categories, seo }: any) => (
+const Layout = ({ children }: any) => (
   <>
-    <Nav categories={categories} />
+    <Nav />
     {children}
+    <Footer />
   </>
 );
 

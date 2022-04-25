@@ -7,17 +7,11 @@ const Card = ({ article }: any) => {
   return (
     <Link href={`/article/${article.attributes.slug}`}>
       <a>
-        <div>
-          <div>
-            <NextImage image={article.attributes.image} />
-          </div>
-          <div>
-            <Text fontSize="100">
-              {article.attributes.category.data.attributes.name}
-            </Text>
-            <Text fontSize="100">{article.attributes.title}</Text>
-          </div>
-        </div>
+        <NextImage image={article.attributes.image} />
+        <Text fontSize="200">
+          {article.attributes.category.data.attributes.name}
+        </Text>
+        <Text fontSize="200">{article.attributes.title}</Text>
       </a>
     </Link>
   );

@@ -1,38 +1,20 @@
 import React from "react";
 import Card from "./card";
+import { SimpleGrid, GridItem, Center } from "@chakra-ui/react";
 
 const Articles = ({ articles }: any) => {
-  const leftArticlesCount = Math.ceil(articles.length / 5);
-  const leftArticles = articles.slice(0, leftArticlesCount);
-  const rightArticles = articles.slice(leftArticlesCount, articles.length);
-
   return (
-    <div>
-      <div>
-        <div>
-          {leftArticles.map((article: any, i: number) => {
-            return (
-              <Card
-                article={article}
-                key={`article__left__${article.attributes.slug}`}
-              />
-            );
-          })}
-        </div>
-        <div>
-          <div>
-            {rightArticles.map((article: any, i: number) => {
-              return (
-                <Card
-                  article={article}
-                  key={`article__left__${article.attributes.slug}`}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
+    <SimpleGrid columns={2} spacing={10}>
+      {articles.map((article: any) => {
+        return (
+          <Center key={article.id}>
+            <GridItem width={"min(500px, 60%)"} m={10}>
+              <Card article={article} />
+            </GridItem>
+          </Center>
+        );
+      })}
+    </SimpleGrid>
   );
 };
 
